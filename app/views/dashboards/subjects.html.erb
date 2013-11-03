@@ -1,0 +1,12 @@
+<h2>Manage Subjects</h2>
+
+<%= form_for(@user, :url => url_for(:controller => 'dashboards', :action => 'update_subjects')) do |f| %>
+  <% @subjects.each do |subject| %>
+  <p>
+
+ <%= check_box_tag "user[subject_ids][]", subject.id, @user.subject_ids.include?(subject.id), :id => subject.id%>
+ <%= label_tag 'user[subject_ids][]', subject.title, :for => subject.title %>
+  </p>
+  <% end %>
+  <p><%= f.submit %></p>
+<% end %> 

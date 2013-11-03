@@ -1,0 +1,8 @@
+<h2>welcome to your dashboard</h2>
+
+<h3>Your Subjects</h3>
+ <% @subjects.each do|d| %>
+<%=  @subjects.count <1 ? 'You have no subjects.' : d.title %><br>
+<% end %>
+<br>
+<%= link_to('Manage your subjects.', subjects_url) %>
