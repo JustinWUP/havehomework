@@ -8,16 +8,16 @@
 
 Content.create([{title: 'Home', body: 'this is the home page'}])
 Subject.create(
-	[{title: 'Math'},
-	{title: 'English'},
-	{title: 'Reading'},
-	{title: 'Science'},
-	{title: 'Social Studies'},
-	{title: 'History'},
-	{title: 'Geography'},
-	{title: 'Biology'},
-	{title: 'Chemistry'},
-	{title: 'Health'},
-	{title: 'Music'},
-	{title: 'Art'},
-	{title: 'Computers'}])
+	[{name: 'Math'},
+	{name: 'English'},
+	{name: 'Reading'},
+	{name: 'Science'},
+	{name: 'Social Studies'},
+	{name: 'History'},
+	{name: 'Geography'},
+	{name: 'Biology'},
+	{name: 'Chemistry'},
+	{name: 'Health'},
+	{name: 'Music'},
+	{name: 'Art'},
+	{name: 'Computers'}])

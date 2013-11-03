@@ -1,7 +1,7 @@
 Havehomework::Application.routes.draw do
 
 
-  match 'subjects' => 'dashboards#subjects'
+  match 'my_subjects' => 'dashboards#subjects'
   match 'update_subjects' => 'dashboards#update_subjects'
   match 'dashboard' => 'dashboards#index'
 

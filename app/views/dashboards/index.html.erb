@@ -1,8 +1,13 @@
 <h2>welcome to your dashboard</h2>
 
 <h3>Your Subjects</h3>
- <% @subjects.each do|d| %>
-<%=  @subjects.count <1 ? 'You have no subjects.' : d.title %><br>
+ <% @mysubjects.each do|d| %>
+<%=  @mysubjects.count <1 ? 'You have no subjects.' : d.name %><br>
 <% end %>
 <br>
-<%= link_to('Manage your subjects.', subjects_url) %>
+
+<%= form_for(@user, :url => url_for(:controller => 'dashboards', :action => 'update_subjects')) do |f| %>
+<%= text_field_tag 'subjects', nil , :name => 'user[subject_ids][]', "data-pre" => @user.subjects.map(&:attributes).to_json %>
+  <br><br><br>
+  <p><%= f.submit %></p>
+<% end %> 

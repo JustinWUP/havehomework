@@ -14,6 +14,7 @@ gem "meta_search",    '>= 1.1.0.pre'
 gem 'devise'
 gem 'cancan'
 gem 'jquery-ui-rails'
+gem 'jquery-tokeninput-rails'
 
 # Gems used only for assets and not required
 # in production environments by default.
