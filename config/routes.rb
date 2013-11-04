@@ -16,6 +16,8 @@ Havehomework::Application.routes.draw do
 
   resources :assignments
 
+  match 'subjects/:id/my_assignments/' => 'assignments#by_subject', :as => 'my_assignments'
+
 
   resources :subjects
   resources :users

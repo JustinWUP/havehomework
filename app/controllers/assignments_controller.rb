@@ -80,4 +80,13 @@ class AssignmentsController < ApplicationController
       format.json { head :no_content }
     end
   end
+
+  def by_subject
+    @assignments = Assignment.all
+
+    respond_to do |format|
+      format.html # index.html.erb
+      format.json { render json: @assignments }
+    end
+  end
 end

@@ -17,7 +17,7 @@ class DashboardsController < InheritedResources::Base
 		@subjects = Subject.find(@subjects)
 		@user.subjects = @subjects
 		respond_to do |format|
-	    	format.html# { redirect_to '/dashboard', notice: 'Subjects were successfully updated.' }
+	    	format.html { redirect_to '/dashboard', notice: 'Subjects were successfully updated.' }
 	    end
 	end
 

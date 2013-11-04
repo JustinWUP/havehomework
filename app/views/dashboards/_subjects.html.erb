@@ -1,0 +1,5 @@
+<%= form_for(@user, :url => url_for(:controller => 'dashboards', :action => 'update_subjects')) do |f| %>
+<%= text_field_tag 'subjects', nil , :name => 'user[subject_ids][]', "data-pre" => @user.subjects.map(&:attributes).to_json %>
+  <br><br><br>
+  <p><%= f.submit %></p>
+<% end %> 
