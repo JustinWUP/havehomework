@@ -25,7 +25,7 @@ class AssignmentsController < ApplicationController
   # GET /assignments/new.json
   def new
     @assignment = Assignment.new
-
+    @subject = Subject.find_by_id(params[:subject_id])
     respond_to do |format|
       format.html # new.html.erb
       format.json { render json: @assignment }
@@ -40,11 +40,12 @@ class AssignmentsController < ApplicationController
   # POST /assignments
   # POST /assignments.json
   def create
-    @assignment = Assignment.new(params[:assignment])
+    @subject = Subject.find_by_id(params[:subject_id])
+    @assignment = @subject.assignments.new(params[:assignment])
 
     respond_to do |format|
       if @assignment.save
-        format.html { redirect_to @assignment, notice: 'Assignment was successfully created.' }
+        format.html { redirect_to my_assignments_url(params[:subject_id]), notice: 'Assignment was successfully created.' }
         format.json { render json: @assignment, status: :created, location: @assignment }
       else
         format.html { render action: "new" }
@@ -82,8 +83,9 @@ class AssignmentsController < ApplicationController
   end
 
   def by_subject
-    @assignments = Assignment.all
-
+    @subject = Subject.find_by_id(params[:id])
+    @assignments = @subject.assignments.all
+    
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @assignments }

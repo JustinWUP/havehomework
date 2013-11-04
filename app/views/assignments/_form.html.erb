@@ -1,5 +1,5 @@
-<%= form_for(@assignment) do |f| %>
-  <% if @assignment.errors.any? %>
+<%= form_for([@subject, @assignment]) do |f| %>
+<!--   <% if @assignment.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@assignment.errors.count, "error") %> prohibited this assignment from being saved:</h2>
 
@@ -9,7 +9,7 @@
       <% end %>
       </ul>
     </div>
-  <% end %>
+  <% end %> -->
 
   <div class="actions">
     <%= f.submit %>

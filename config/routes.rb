@@ -14,12 +14,13 @@ Havehomework::Application.routes.draw do
   resources :contents
 
 
-  resources :assignments
-
   match 'subjects/:id/my_assignments/' => 'assignments#by_subject', :as => 'my_assignments'
 
 
-  resources :subjects
+  resources :subjects do
+    resources :assignments
+  end
+
   resources :users
 
 

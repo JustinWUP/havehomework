@@ -9,13 +9,13 @@
 
 <% @assignments.each do |assignment| %>
   <tr>
-    <td><%= link_to 'Show', assignment %></td>
-    <td><%= link_to 'Edit', edit_assignment_path(assignment) %></td>
-    <td><%= link_to 'Destroy', assignment, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    <td><%= link_to 'Show', subject_assignment_path(@subject.id, assignment.id) %></td>
+    <td><%# link_to 'Edit', edit_assignment_path(assignment) %></td>
+    <td><%# link_to 'Destroy', assignment, method: :delete, data: { confirm: 'Are you sure?' } %></td>
   </tr>
 <% end %>
 </table>
 
 <br />
 
-<%= link_to 'New Assignment', new_assignment_path %>
+<%= link_to 'New Assignment', new_subject_assignment_url(params[:id]) %>
