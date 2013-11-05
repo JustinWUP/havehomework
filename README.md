@@ -10,6 +10,7 @@ havehomework
 - rake db:seed
 - rake assets:clean
 - rake assets:precompile
+- bundle install
 - rails s
 - http://localhost:3000
 - Mix well, enjoy over ice or neat.
