@@ -5,13 +5,13 @@ havehomework
 
 - Git clone site
 - Temporarily rename app/admin folder to something
-- from terminal, run rake db:migrate
+- from terminal, run `rake db:migrate`
 - Rename app/admin back 
-- rake db:seed
-- rake assets:clean
-- rake assets:precompile
-- bundle install
-- rails s
+- `rake db:seed`
+- `rake assets:clean`
+- `rake assets:precompile`
+- `bundle install`
+- `rails s`
 - http://localhost:3000
 - Mix well, enjoy over ice or neat.
 
