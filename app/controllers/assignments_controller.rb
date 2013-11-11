@@ -34,7 +34,8 @@ class AssignmentsController < ApplicationController
 
   # GET /assignments/1/edit
   def edit
-    @assignment = Assignment.find(params[:id])
+    @subject = Subject.find_by_id(params[:subject_id])
+    @assignment = @subject.assignments.find(params[:id])
   end
 
   # POST /assignments
@@ -73,11 +74,12 @@ class AssignmentsController < ApplicationController
   # DELETE /assignments/1
   # DELETE /assignments/1.json
   def destroy
-    @assignment = Assignment.find(params[:id])
+    @subject = Subject.find_by_id(params[:subject_id])
+    @assignment = @subject.assignments.find(params[:id])
     @assignment.destroy
 
     respond_to do |format|
-      format.html { redirect_to assignments_url }
+      format.html { redirect_to my_assignments_url(params[:subject_id]) }
       format.json { head :no_content }
     end
   end

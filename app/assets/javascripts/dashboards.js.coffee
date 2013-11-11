@@ -3,8 +3,9 @@
 # You can use CoffeeScript in this file: http://jashkenas.github.com/coffee-script/
 
 $(document).ready =>
+
 	#for dashboard screen 
-	
+
 	if document.location.pathname == '/dashboard'
 		subjectlist = []
 		$.ajax({

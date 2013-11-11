@@ -1,4 +1,4 @@
 class Assignment < ActiveRecord::Base
-  # attr_accessible :title, :body
+  attr_accessible :name, :description
   belongs_to :assignable, polymorphic: true
 end

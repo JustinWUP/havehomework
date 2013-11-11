@@ -2,16 +2,18 @@
 
 <table>
   <tr>
-    <th></th>
-    <th></th>
+    <th>name</th>
+    <th>description</th>
     <th></th>
   </tr>
 
 <% @assignments.each do |assignment| %>
   <tr>
+    <td><%=assignment.name%></td>
+    <td><%=assignment.description%></td>
     <td><%= link_to 'Show', subject_assignment_path(@subject.id, assignment.id) %></td>
-    <td><%# link_to 'Edit', edit_assignment_path(assignment) %></td>
-    <td><%# link_to 'Destroy', assignment, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    <td><%= link_to 'Edit', edit_subject_assignment_path(@subject, assignment) %></td>
+    <td><%= link_to 'Destroy', subject_assignment_path(@subject.id, assignment.id), method: :delete, data: { confirm: 'Are you sure?' } %></td>
   </tr>
 <% end %>
 </table>
