@@ -1,0 +1,4 @@
+<h3>Your Assignments</h3>
+<% @assignments.each do |assignment| %>
+<%= link_to assignment.name, subject_assignment_path(assignment.assignable.id, assignment.id) %> <br>
+<% end %>

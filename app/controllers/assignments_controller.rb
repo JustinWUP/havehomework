@@ -43,9 +43,11 @@ class AssignmentsController < ApplicationController
   def create
     @subject = Subject.find_by_id(params[:subject_id])
     @assignment = @subject.assignments.new(params[:assignment])
+    @user = User.find(current_user.id)
 
     respond_to do |format|
       if @assignment.save
+        @user.assignments << @assignment
         format.html { redirect_to my_assignments_url(params[:subject_id]), notice: 'Assignment was successfully created.' }
         format.json { render json: @assignment, status: :created, location: @assignment }
       else
@@ -86,8 +88,7 @@ class AssignmentsController < ApplicationController
 
   def by_subject
     @subject = Subject.find_by_id(params[:id])
-    @assignments = @subject.assignments.all
-    
+    @assignments = @subject.assignments.all()
     respond_to do |format|
       format.html # index.html.erb
       # format.json { render json: @assignments }

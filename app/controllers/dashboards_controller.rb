@@ -4,6 +4,7 @@ class DashboardsController < InheritedResources::Base
 		@user = User.find(current_user.id)
 		@subjects = Subject.all()
 		@mysubjects = @user.subjects.all()
+		@assignments = @user.assignments.all
 		respond_to do |format|
 	      format.html # index.html.erb
 	    end

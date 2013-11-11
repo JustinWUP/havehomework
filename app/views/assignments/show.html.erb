@@ -1,5 +1,8 @@
 <p id="notice"><%= notice %></p>
-
+<h2><%= @assignment.name %></h2>
+<%= @assignment.description %>
+<br>
 
 <%= link_to 'Edit', edit_subject_assignment_path(params[:subject_id], @assignment) %> |
-<%= link_to 'Back', my_assignments_path %>
+<%= link_to 'Back', my_assignments_path %> |
+<%= link_to 'Assign this to a student.', '#' %>
