@@ -1,9 +1,3 @@
 <h2>welcome to your dashboard</h2>
 
-<h3>Your Subjects</h3>
- <% @mysubjects.each do|d| %>
-<%=  @mysubjects.count <1 ? 'You have no subjects.' : link_to(d.name, my_assignments_url(d.id)) %><br>
-<% end %>
-<br>
-
 <%= render 'subjects' %>
