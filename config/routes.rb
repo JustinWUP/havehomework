@@ -3,6 +3,7 @@ Havehomework::Application.routes.draw do
 
   match 'my_subjects' => 'dashboards#subjects'
   match 'update_subjects' => 'dashboards#update_subjects'
+  match 'add_classperiod' => 'dashboards#add_classperiod'
   match 'dashboard' => 'dashboards#index'
 
   devise_for :users

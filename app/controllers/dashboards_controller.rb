@@ -5,6 +5,7 @@ class DashboardsController < InheritedResources::Base
 		@subjects = Subject.all()
 		@mysubjects = @user.subjects.all()
 		@assignments = @user.assignments.all
+		@classperiods = @user.classperiods.all
 		respond_to do |format|
 	      format.html # index.html.erb
 	    end
@@ -19,6 +20,15 @@ class DashboardsController < InheritedResources::Base
 		@user.subjects = @subjects
 		respond_to do |format|
 	    	format.html { redirect_to '/dashboard', notice: 'Subjects were successfully updated.' }
+	    end
+	end
+
+	def add_classperiod
+		@user = User.find(current_user.id)
+		@classperiod = Classperiod.new(params[:classperiod])
+		@user.classperiods << @classperiod
+		respond_to do |format|
+	    	format.html { redirect_to '/dashboard', notice: 'Class Periods were successfully updated.' }
 	    end
 	end
 

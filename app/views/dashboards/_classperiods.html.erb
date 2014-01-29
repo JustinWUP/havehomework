@@ -1,0 +1,9 @@
+<h3>Your Class Periods</h3>
+<% @classperiods.each do |classperiod| %>
+<%= classperiod.name%> <br>
+<% end %>
+add a class period
+<%= form_for(Classperiod.new, :url => url_for(:controller => 'dashboards', :action => 'add_classperiod')) do |f| %>
+<%= f.text_field :name %>
+<% end %> 
+
